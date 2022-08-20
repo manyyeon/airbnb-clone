@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-ALLOWED_HOSTS = [".ap-northeast-2.compute.amazonaws.com"]
+ALLOWED_HOSTS = ["ec2-13-124-169-44.ap-northeast-2.compute.amazonaws.com"]
 
 
 # Internationalization
