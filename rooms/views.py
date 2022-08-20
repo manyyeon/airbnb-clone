@@ -1,8 +1,36 @@
-from secrets import choice
+from rest_framework import status
 from django.views.generic import ListView, DetailView
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django_countries import countries
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from .serializers import RoomSerializer
 from . import models
+
+
+@api_view(["GET"])
+def roomList(request):
+    rooms = models.Room.objects.all()
+    serializer = RoomSerializer(rooms, many=True)
+    return Response(serializer.data)
+
+
+@api_view(["GET", "PUT", "DELETE"])
+def roomDetail(request, pk):
+    room = get_object_or_404(models.Room, pk=pk)
+
+    if request.method == "GET":
+        serializer = RoomSerializer(room)
+        return Response(serializer.data)
+    elif request.method == "DELETE":
+        room.delete()
+        data = {"pk": pk}
+        return Response(data, status=status.HTTP_204_NO_CONTENT)
+    elif request.method == "PUT":
+        serializer = RoomSerializer(instance=room, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+        return Response(serializer.data)
 
 
 class HomeView(ListView):
