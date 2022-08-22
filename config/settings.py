@@ -119,13 +119,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-ALLOWED_HOSTS = ["ec2-13-124-169-44.ap-northeast-2.compute.amazonaws.com"]
+ALLOWED_HOSTS = ["ec2-15-164-97-131.ap-northeast-2.compute.amazonaws.com"]
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ko-kr"
 
 TIME_ZONE = "Asia/Seoul"
 

@@ -30,6 +30,7 @@ sqlparse = "==0.4.2"
 tomli = "==2.0.1"
 toposort = "==1.7"
 typing-extensions = "==4.3.0"
+uwsgi = "*"
 
 [dev-packages]
 flake8 = "*"
