@@ -31,6 +31,7 @@ tomli = "==2.0.1"
 toposort = "==1.7"
 typing-extensions = "==4.3.0"
 uwsgi = "*"
+pipenv-to-requirements = "*"
 
 [dev-packages]
 flake8 = "*"
