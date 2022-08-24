@@ -10,6 +10,7 @@ from . import models
 
 @api_view(["GET"])
 def roomList(request):
+    print(request)
     rooms = models.Room.objects.all()
     serializer = RoomSerializer(rooms, many=True)
     return Response(serializer.data)
